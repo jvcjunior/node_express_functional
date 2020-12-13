@@ -1,8 +1,12 @@
-const { Model } = require('objection');
+import Model from '../utils/model';
 
 class Article extends Model {
+  static get modelPaths() {
+    return [__dirname];
+  }
+
   static get tableName() {
-    return 'authors';
+    return 'articles';
   }
   static get jsonSchema() {
     return {
@@ -10,6 +14,7 @@ class Article extends Model {
 
       properties: {
         id: { type: 'integer' },
+        authorId: { type: 'integer' },
         category: { type: 'string', minLength: 1, maxLength: 50 },
         title: { type: 'string', minLength: 1, maxLength: 100 },
         summary: { type: 'string', minLength: 1, maxLength: 255 },
@@ -20,6 +25,21 @@ class Article extends Model {
       },
     };
   }
+
+  static get relationMappings() {
+    // Importing models here is a one way to avoid require loops.
+    // const Author = require('./author.model');
+    return {
+      author: {
+        relation: Model.BelongsToOneRelation,
+        modelClass: 'author.model',
+        join: {
+          from: 'articles.author_id',
+          to: 'authors.id'
+        }
+      }
+    }
+  };
   
 }
 

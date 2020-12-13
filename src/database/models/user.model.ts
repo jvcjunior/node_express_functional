@@ -1,7 +1,4 @@
-// Person model.
-// import { Model } from '../database';
-const { Model } = require('objection');
-
+import Model from '../utils/model';
 class User extends Model {
   static get tableName() {
     return 'users';

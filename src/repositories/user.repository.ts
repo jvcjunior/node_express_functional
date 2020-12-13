@@ -1,11 +1,14 @@
-import baseRepository from './commom.repository';
+import {
+  getFirstRecordBy,
+  create as createRecord
+} from './commom.repository';
 
 const tableName = 'users'
 
 const getRecordBy = async (column: string, value: string | number) =>
-  baseRepository.getFirstRecordBy(tableName, column, value)
+  getFirstRecordBy(tableName, column, value)
 
-const create = async (data: User) => baseRepository.create(tableName, data)
+const create = async (data: IUser) => createRecord(tableName, data)
 
 export {
   getRecordBy,

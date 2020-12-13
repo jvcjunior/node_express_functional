@@ -7,12 +7,26 @@ const getFirstRecordBy = async (tableName: string, column: string, value: string
     .where(column, '=', value)
     .first()
 
-const create = async (tableName: string, data: User) =>
+const getOne = async (tableName: string, columnPrimary: string, value: string | number) =>
+  database
+    .select()
+    .from(tableName)
+    .where(columnPrimary, '=', value)
+    .first()
+
+const create = async (tableName: string, data: any) =>
   await database(tableName)
     .returning('*')
     .insert(data)
 
-export default {
-  getFirstRecordBy,
+const deleteRecord = async (tableName: string, columnPrimary: string, id: number) =>
+  await database(tableName)
+    .where(columnPrimary, id)
+    .delete()
+
+export {
+  getOne,
   create,
+  deleteRecord,
+  getFirstRecordBy,
 }

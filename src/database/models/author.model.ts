@@ -1,6 +1,10 @@
-const { Model } = require('objection');
+import Model from '../utils/model';
 
 class Author extends Model {
+  static get modelPaths() {
+    return [__dirname];
+  }
+
   static get tableName() {
     return 'authors';
   }
@@ -17,6 +21,21 @@ class Author extends Model {
       },
     };
   }
+
+  static get relationMappings() {
+    // Importing models here is a one way to avoid require loops.
+    // const Article = require('./article.model');
+    return {
+      author: {
+        relation: Model.HasManyRelation,
+        modelClass: 'article.model',
+        join: {
+          from: 'authors.id',
+          to: 'articles.author_id'
+        }
+      }
+    }
+  };
   
 }
 

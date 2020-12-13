@@ -31,7 +31,7 @@ const authenticate = async (request: Request) => {
   })
 }
 
-const jwtSignIn = (user: User) => {
+const jwtSignIn = (user: IUser) => {
   const jwtToken = createJwtToken({
     id: get('id', user),
     email: get('email', user),

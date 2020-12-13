@@ -13,7 +13,7 @@ const signup = async (request: Request) =>
     curry(successResponse)(request)
   )(request.body)
 
-const encryptPassword = (user: SignupDTO) => ({
+const encryptPassword = (user: ISignupDTO) => ({
   ...user,
   password: encrypt(user.password)
 })

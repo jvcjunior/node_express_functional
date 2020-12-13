@@ -4,6 +4,7 @@ import articleController from '../controllers/article.controller'
 
 const routes = Router()
 
-routes.get('/', checkJwt, articleController.getArticles)
+routes.get('/:id', articleController.getById)
+routes.get('/', checkJwt, articleController.getAll)
 
 export default routes

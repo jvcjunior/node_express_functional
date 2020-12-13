@@ -7,11 +7,12 @@ export async function up(knex: Knex) {
     table.string('title').notNullable()
     table.string('summary').notNullable()
     table.string('firstParagraph').nullable()
-    table.integer('authorId').notNullable()
+    table.string('body').nullable()
+    table.integer('author_id').notNullable()
     table.dateTime('created_at').notNullable().defaultTo(knex.fn.now())
     table.dateTime('updated_at').nullable()
 
-    table.foreign('authorId').references('id').inTable('authors')
+    table.foreign('author_id').references('id').inTable('authors')
   })
 }
 

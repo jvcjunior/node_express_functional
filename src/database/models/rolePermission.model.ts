@@ -1,4 +1,4 @@
-const { Model } = require('objection');
+import Model from '../utils/model';
 
 class RolePermission extends Model {
   static get tableName() {
