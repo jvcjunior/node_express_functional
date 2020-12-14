@@ -21,7 +21,34 @@ const getById = async (req: Request, res: Response, next: NextFunction) => {
   }
 }
 
+const create = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    res.json(await articleService.create(req))
+  } catch (error) {
+    next(error);
+  }
+}
+
+const update = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    res.json(await articleService.update(req))
+  } catch (error) {
+    next(error);
+  }
+}
+
+const remove = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    res.json(await articleService.remove(req))
+  } catch (error) {
+    next(error);
+  }
+}
+
 export default { 
+  create,
+  update,
+  remove,
   getById, 
   getArticles,
   getAll,

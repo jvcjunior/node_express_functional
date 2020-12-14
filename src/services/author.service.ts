@@ -1,7 +1,7 @@
 //@ts-ignore
 import asyncPipe from 'pipeawait';
 import { Request } from 'express';
-import { curry, omit, map } from 'lodash/fp'
+import { curry } from 'lodash/fp'
 import { successResponse } from '../common/utils/response.utils';
 import { 
   create as createRecord, 
@@ -21,32 +21,30 @@ const getById = async (request: Request) =>
   asyncPipe(
     getOne,
     curry(successResponse)(request)
-  )(request.params.id)
+  )(request.params.id)//TODO: improve getting these params
 
 const create = async (request: Request) =>
   asyncPipe(
     createRecord,
     curry(successResponse)(request)
-  )(request.body)
+  )(request.body)//TODO: improve getting these params
 
-  const update = async (request: Request) =>
+const update = async (request: Request) =>
   asyncPipe(
     editRecord,
     curry(successResponse)(request)
-  )(request.body)
-
-const deleteOne = async (request: Request) =>
+  )({id: request.params.id, data:request.body })//TODO: improve getting these params
+  
+const remove = async (request: Request) =>
   asyncPipe(
     removeRecord,
     curry(successResponse)(request)
-  )(request.params.id)
+  )(request.params.id)//TODO: improve getting these params
 
 export default {
   create,
   update,
-  deleteOne,
+  remove,
   getAll,
   getById,
-  // getOne,
-  // update,
 }

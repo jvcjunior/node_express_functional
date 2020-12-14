@@ -1,14 +1,9 @@
 import knex from 'knex';
-import path from 'path';
 import { Model }  from 'objection';
+import config from '../config/config';
 
-const db = knex({
-  client: 'sqlite3',
-  connection: {
-    filename: path.resolve(__dirname, 'database.sqlite')
-  },
-  useNullAsDefault: true,
-})
+const dbConfig: knex.Config = config.db;
+const db = knex(dbConfig)
 
 // Give the knex instance to objection.
 Model.knex(db);

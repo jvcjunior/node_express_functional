@@ -11,7 +11,7 @@ const getAll = async (req: Request, res: Response, next: NextFunction) => {
 
 const getById = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    // res.json(await authorService.getById(req))
+    res.json(await authorService.getById(req))
   } catch (error) {
     next(error);
   }
@@ -27,7 +27,7 @@ const create = async (req: Request, res: Response, next: NextFunction) => {
 
 const update = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    // res.json(await authorService.update(req))
+    res.json(await authorService.update(req))
   } catch (error) {
     next(error);
   }
@@ -35,7 +35,7 @@ const update = async (req: Request, res: Response, next: NextFunction) => {
 
 const remove = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    // res.json(await authorService.remove(req))
+    res.json(await authorService.remove(req))
   } catch (error) {
     next(error);
   }

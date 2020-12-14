@@ -24,18 +24,16 @@ class Permission extends Model {
 
   static get relationMappings() {
     // Importing models here is a one way to avoid require loops.
-    const Role = require('./role.model');
-    const RolePermission = require('./rolePermission.model');
     return {
       roles: {
         relation: Model.ManyToManyRelation,
-        modelClass: Role,
+        modelClass:  __dirname + '/role.model',
         join: {
           from: 'permissions.id',
           through: {
-            modelClass: RolePermission,
-            from: 'permissions_users.code',
-            to: 'users_permissions.userId'
+            // modelClass:  __dirname + '/rolePermisson.model',
+            from: 'rolePermissions.code',
+            to: 'rolePermissions.roleId'
           },
           to: 'roles.id'
         }

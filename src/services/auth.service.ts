@@ -3,7 +3,7 @@ import { asyncPipe } from 'pipeawait';
 import HttpStatus from 'http-status-codes'
 import { Request } from 'express';
 import { getOr, get, omit } from 'lodash/fp'
-import BaseError from '../common/utils/baseError.utils';
+import BaseError from '../exceptions/BaseError';
 import { successResponse } from '../common/utils/response.utils';
 import { createJwtToken, encrypt } from '../common/utils/auth.utils'
 import { getRecordBy } from '../repositories/user.repository'

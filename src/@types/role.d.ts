@@ -1,8 +1,8 @@
-interface IUser {
+interface IRole {
   id?: String;
   name: String;
-  email: String;
-  password?: String;
+  description: String;
+  permissions?: String;
   created_at?: Date;
   updated_at?: Date;
 }

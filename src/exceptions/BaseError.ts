@@ -1,4 +1,4 @@
-import HttpStatusCode from "../../types/httpStatus";
+import HttpStatusCode from "../@types/httpStatus";
 
 class BaseError extends Error {
   public readonly name: string;

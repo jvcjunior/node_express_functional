@@ -2,14 +2,23 @@ import {
   getFirstRecordBy,
   create as createRecord,
   getOne as getOneRecord,
+  deleteRecord,
 } from './commom.repository';
-import database from '../database/connection'
+import { isEmpty } from 'lodash/fp'
 import articleModel from '../database/models/article.model'
 
 const tableName = 'articles'
 const primaryColumn = 'id'
 
-const create = async (data: IUser) => createRecord(tableName, data)
+const create = async (data: IAuthor) => createRecord(tableName, data)
+
+const edit = async ({id, data}: { id: number, data: IAuthor }) => 
+  await articleModel.query()
+    .findById(id)
+    //@ts-ignore
+    .patch(data);
+
+const remove = async (id: number) => deleteRecord(tableName, primaryColumn, id)
 
 const getRecordBy = async (column: string, value: string | number) =>
   getFirstRecordBy(tableName, column, value)
@@ -24,11 +33,21 @@ const getOneWithAuthor = async (id: string | number) =>
     .where('articles.id', '=', id)
     .first()
 
-const getAllRecords = async () => 
-  await articleModel.query().withGraphJoined({ author: true })
+const getAllRecords = async (category: string) => {
+  const sql = articleModel.query();
+  if (!isEmpty(category)){
+    sql.where(builder =>
+      builder
+        .where('category', 'like', `%${category}%`)
+    )
+  }
+  return await sql.withGraphJoined({ author: true })
+}
 
 export {
   create,
+  edit,
+  remove,
   getOne,
   getOneWithAuthor,
   getAllRecords,

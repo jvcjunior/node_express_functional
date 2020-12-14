@@ -1,7 +1,7 @@
 import HttpStatus from 'http-status-codes';
 import { Request } from 'express';
-import HttpStatusCode from '../../types/httpStatus';
-import BaseError from './baseError.utils';
+import HttpStatusCode from '../../@types/httpStatus';
+import BaseError from '../../exceptions/BaseError';
 
 const successResponse = (request: Request, data: any) => ({
   success: true,

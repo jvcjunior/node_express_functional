@@ -21,13 +21,12 @@ class User extends Model {
 
   static get relationMappings() {
     // Importing models here is a one way to avoid require loops.
-    const Role = require('./role.model');
     return {
       role: {
-        relation: Model.HasOneRelation,
-        modelClass: Role,
+        relation: Model.BelongsToOneRelation,
+        modelClass: __dirname + '/role.model',
         join: {
-          from: 'users.id',
+          from: 'users.roleId',
           to: 'roles.id'
         }
       }

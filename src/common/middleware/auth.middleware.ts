@@ -2,7 +2,6 @@ import HttpStatus from 'http-status-codes'
 import { Request, Response, NextFunction } from 'express';
 import * as jwt from "jsonwebtoken";
 import { JWT_SECRET } from '../constants/auth.constant'
-import BaseError from '../utils/baseError.utils';
 import { errorResponse } from '../utils/response.utils'
 
 export const checkJwt = (req: Request, res: Response, next: NextFunction) => {

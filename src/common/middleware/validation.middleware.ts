@@ -1,7 +1,7 @@
 import HttpStatus from 'http-status-codes';
 import { Request, Response, NextFunction } from 'express';
 import Joi from 'joi'; 
-import BaseError from '../utils/baseError.utils';
+import BaseError from '../../exceptions/BaseError';
 
 // schema options
 const options = {

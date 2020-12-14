@@ -5,6 +5,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import routes from './routes';
 import errorMiddleware from './common/middleware/error.middleware'
+import config from './config/config';
 
 // UncaughtException and UnhandledRejection handlers
 import './common/utils/errorHandlerGlobal.utils'
@@ -12,7 +13,11 @@ import './common/utils/errorHandlerGlobal.utils'
 import './database/connection';
 
 // Create a new express application instance
+const { name, version } = config;
 const app = express();
+
+app.locals.name = name;
+app.locals.version = version;
 
   // Call midlewares
 app.use(cors())

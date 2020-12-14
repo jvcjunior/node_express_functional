@@ -6,12 +6,12 @@ import {
 } from './commom.repository';
 import authorModel from '../database/models/author.model'
 
-const tableName = 'articles'
+const tableName = 'authors'
 const primaryColumn = 'id'
 
 const create = async (data: IAuthor) => createRecord(tableName, data)
 
-const edit = async (id: number, data: IAuthor) => 
+const edit = async ({id, data}: { id: number, data: IAuthor }) => 
   await authorModel.query()
     .findById(id)
     //@ts-ignore

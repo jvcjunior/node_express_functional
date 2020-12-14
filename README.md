@@ -1,29 +1,79 @@
-# Run locally 
-## Install Dependencies
-To install the dependencies we just need to run the following:
+Node.js Express API in Typescript For Jungle Devs
+
+## Requirements
+
+- [Node.js](https://yarnpkg.com/en/docs/install)
+- [Yarn](https://yarnpkg.com/en/docs/install)
+- [NPM](https://docs.npmjs.com/getting-started/installing-node)
+- [Docker](https://docs.docker.com/install/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+## Getting Started
+
+**Using Docker To Start Database**
+
+Make a copy of `.env.docker` and save as `.env`.
+
+```bash
+$ cp .env.docker .env
+```
+
+Install dependencies and run the application locally.
+
+```bash
+$ docker-compose up -d postgres
 
 ```
-npm install or yarn
+
+Generate tables in database.
+```bash
+$ yarn run migrate
 ```
 
-After installing all dependencies we can run the project. 
+Load fake data in database.
 
-## Run the project
-To run the project we just need to run the following:
-
-```
-yarn start
+```bash
+$ yarn run seed
 ```
 
-## Test the project
-To test the project we just need to run the following:
+**To run the app on Docker**
+```bash
+$ docker-compose up -d api
+```
+Then access the API using the host configured at the .env file.
 
+
+**To run the app locally acessing docker postgres**
+
+Install the dependencies.
+
+```bash
+$ cp .env.example .env # Update database credentials
+
+$ yarn
+```
+
+Generate tables in database.
+```bash
+$ yarn run migrate
+```
+
+Load fake data in database.
+
+```bash
+$ yarn run seed
+```
+
+Start the application.
+
+```bash
+$ yarn start # For development
+```
+
+**Run Jest Tests**
 ```
 yarn test
 ```
-## Basic Technologies/Requirements
-- Node/Express
-- Knex
-- Jest
-- Lodash/fp
-- Logs with Winston
+
+
+
