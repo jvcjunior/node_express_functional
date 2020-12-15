@@ -13,9 +13,8 @@ const options = {
 export const checkData = (schema: Joi.Schema) => {
   //@ts-ignore
   return (req: Request, res: Response, next: NextFunction) => {
-     // validate request body against schema
-     const { error, value } = schema.validate(req.body, options);
-    
+    // validate request body against schema
+    const { error, value } = schema.validate(req.body, options);
     if (error) { 
       throw new BaseError("", HttpStatus.UNPROCESSABLE_ENTITY, `Validation error: ${error.details.map(x => x.message).join(', ')}`, true);
     } else { 

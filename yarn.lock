@@ -634,6 +634,13 @@
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
   integrity sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==
 
+"@types/express-rate-limit@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@types/express-rate-limit/-/express-rate-limit-5.1.0.tgz#c08e9b4957989fbe5ff8d5224f392359a264a597"
+  integrity sha512-vmg7S3hUnfFmp06V01DrTB41mbQYXMV/F4aF5KKnfCIeSlnizatXaqO9UgR6LvNEEd3eMpuUTLxR6nv3d4hZ6g==
+  dependencies:
+    "@types/express" "*"
+
 "@types/express-serve-static-core@*":
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.17.15.tgz#7c3d37829a991da9a507c1efd44d97532e8909e3"
@@ -650,6 +657,16 @@
   dependencies:
     "@types/node" "*"
     "@types/range-parser" "*"
+
+"@types/express@*":
+  version "4.17.9"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.9.tgz#f5f2df6add703ff28428add52bdec8a1091b0a78"
+  integrity sha512-SDzEIZInC4sivGIFY4Sz1GG6J9UObPwCInYJjko2jzOf/Imx/dlpume6Xxwj1ORL82tBbmN4cPDIDkLbWHk9hw==
+  dependencies:
+    "@types/body-parser" "*"
+    "@types/express-serve-static-core" "*"
+    "@types/qs" "*"
+    "@types/serve-static" "*"
 
 "@types/express@4.17.2":
   version "4.17.2"
@@ -2145,6 +2162,11 @@ expect@^26.6.2:
     jest-matcher-utils "^26.6.2"
     jest-message-util "^26.6.2"
     jest-regex-util "^26.0.0"
+
+express-rate-limit@^5.2.3:
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/express-rate-limit/-/express-rate-limit-5.2.3.tgz#ae73b3dc723decd697797611bd96e9b34a912f6c"
+  integrity sha512-cjQH+oDrEPXxc569XvxhHC6QXqJiuBT6BhZ70X3bdAImcnHnTNMVuMAJaT0TXPoRiEErUrVPRcOTpZpM36VbOQ==
 
 express@^4.17.1:
   version "4.17.1"

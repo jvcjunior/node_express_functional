@@ -6,15 +6,15 @@ import { getOr, get, omit } from 'lodash/fp'
 import BaseError from '../exceptions/BaseError';
 import { successResponse } from '../common/utils/response.utils';
 import { createJwtToken, encrypt } from '../common/utils/auth.utils'
-import { getRecordBy } from '../repositories/user.repository'
+import { getRecordByEmail } from '../repositories/user.repository'
 
 const authenticate = async (request: Request) => {
   const { email, password } = request.body
   if (!email || !password) {
     throw new BaseError("", HttpStatus.BAD_REQUEST, "Please inform email and password", true);
   }
-
-  const user = await getRecordBy('email', email)
+  
+  const user = await getRecordByEmail('email', email)
   if (!user) {
     throw new BaseError("Invalid email or password", HttpStatus.UNAUTHORIZED, "Invalid email or password", true);
   }

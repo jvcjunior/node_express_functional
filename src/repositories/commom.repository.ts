@@ -1,14 +1,14 @@
 import database from '../database/connection'
 
-const getFirstRecordBy = async (tableName: string, column: string, value: string | number) =>
+const getFirstRecordBy = async (tableName: string, column: string, value: string) => 
   await database
     .select()
     .from(tableName)
     .where(column, '=', value)
     .first()
 
-const getOne = async (tableName: string, columnPrimary: string, value: string | number) =>
-  database
+const getOne = async (tableName: string, columnPrimary: string, value: string) =>
+  await database
     .select()
     .from(tableName)
     .where(columnPrimary, '=', value)

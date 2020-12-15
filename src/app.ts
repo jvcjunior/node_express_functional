@@ -7,6 +7,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import routes from './routes';
 import errorMiddleware from './common/middleware/error.middleware'
+import rateLimiterUsingThirdParty from './common/middleware/error.middleware'
 import config from './config/config';
 
 // UncaughtException and UnhandledRejection handlers
@@ -24,6 +25,7 @@ app.locals.version = version;
 
   // Call midlewares
 app.use(cors())
+app.use('/api/', rateLimiterUsingThirdParty)
 app.use(express.json())
 app.use(morgan('[:date[clf]] :method :url status::status length::res[content-length] - :response-time ms'));
 //Set all routes from routes folder

@@ -3,6 +3,8 @@ import request from 'supertest'
 import app from '../../src/app'
 
 describe('Integration tests - Login', () => {
+
+  
 it('should return 404 when no data is passed on body', async () => {
     const res = await request(app).post('/api/login');
     expect(res.status).toBe(HttpStatus.UNPROCESSABLE_ENTITY);
@@ -33,13 +35,15 @@ it('should return 404 when invalid email', async () => {
       });
     expect(res.status).toBe(HttpStatus.UNPROCESSABLE_ENTITY);
   });
-  it('should return 401 when valid email and password but user does not exist', async () => {
-    const res = await request(app)
-      .post('/api/login')
-      .send({
-        email: 'email@email.com',
-        password: '123123'
-      });
-    expect(res.status).toBe(HttpStatus.UNAUTHORIZED);
-  });
+
+  // it('should return 401 when valid email and password but user does not exist', async() => {
+  //     const res = await request(app).post('/api/login').send({
+  //       "email": "emailewq@email.com",
+  //       "password": "123123122"
+  //     })
+  //     // console.log(res)
+  //     expect(res.status).toBe(HttpStatus.UNAUTHORIZED);
+  // });
+  
+  
 });

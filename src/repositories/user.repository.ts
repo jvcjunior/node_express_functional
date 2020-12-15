@@ -3,15 +3,21 @@ import {
   create as createRecord
 } from './commom.repository';
 
+// import userModel from '../database/models/user.model'
+
 const tableName = 'users'
 
-const getRecordBy = async (column: string, value: string | number) =>
-  getFirstRecordBy(tableName, column, value)
+const getRecordByEmail = async (column: string, value: string) => 
+  await getFirstRecordBy(tableName, column, value)
+  // await userModel
+  //   .query()
+  //   .where('users.email', '=', value)
+  //   .first()
 
 const create = async (data: IUser) => createRecord(tableName, data)
 
 export {
-  getRecordBy,
+  getRecordByEmail,
   create,
 }
 

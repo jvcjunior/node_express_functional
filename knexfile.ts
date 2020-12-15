@@ -2,8 +2,6 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-// console.log('ENV VAR ========> ', process.env);
-
 export default {
   development: {
     client: process.env.DB_CLIENT,

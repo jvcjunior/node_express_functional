@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from 'express';
+import { NextFunction } from 'express';
 import { createJwtToken } from '../utils/auth.utils';
 import { checkJwt } from './auth.middleware';
 const httpMocks = require('node-mocks-http');
