@@ -12,6 +12,10 @@
 - Serialization :heavy_check_mark: 
 - Production builds :heavy_check_mark: 
 
+Added:
+- Rate Limit
+- 
+
 **Target level**: This is an all around challenge that cover both juniors and experience devs based on the depth of how the concepts were applied.
 
 **Final accomplishment**: By the end of this challenge you’ll have a production ready API.
