@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "7455a778-3df0-4e86-a1d4-961be67f0078",
+		"name": "JungleDevCollectionNodeApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3001/api/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Maria\",\n    \"email\": \"maria@gmail.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:{{jungle_port}}/api/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{jungle_port}}",
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/articles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ4aWNvQHhpY28uY29tIiwibmFtZSI6InhpY28iLCJpYXQiOjE2MDc3NDAzODd9.7L0XoXODBqSx4Rk3z-6KJj1Y0YXOZjy3C-hgSM2YKOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{jungle_port}}/api/articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{jungle_port}}",
+					"path": [
+						"api",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/article",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ4aWNvQHhpY28uY29tIiwibmFtZSI6InhpY28iLCJpYXQiOjE2MDc3NDAzODd9.7L0XoXODBqSx4Rk3z-6KJj1Y0YXOZjy3C-hgSM2YKOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{jungle_port}}/api/articles/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{jungle_port}}",
+					"path": [
+						"api",
+						"articles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/admin/articles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ2YWx0aW1AZ21haWwuY29tIiwibmFtZSI6IlZhbHRpbSBKdW5pcyIsImlhdCI6MTYwNzk3MTE5M30.wzt4eA1vfVHZ9fBwkvzMXaKgk2gFXT5r_WYrK8aFKEQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{jungle_port}}/api/admin/articles?category=sus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{jungle_port}}",
+					"path": [
+						"api",
+						"admin",
+						"articles"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "sus"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/admin/authors",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ2YWx0aW1AZ21haWwuY29tIiwibmFtZSI6IlZhbHRpbSBKdW5pcyIsImlhdCI6MTYwNzk3MTE5M30.wzt4eA1vfVHZ9fBwkvzMXaKgk2gFXT5r_WYrK8aFKEQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{jungle_port}}/api/admin/authors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{jungle_port}}",
+					"path": [
+						"api",
+						"admin",
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/admin/authors",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ4aWNvQHhpY28uY29tIiwibmFtZSI6InhpY28iLCJpYXQiOjE2MDc3NDAzODd9.7L0XoXODBqSx4Rk3z-6KJj1Y0YXOZjy3C-hgSM2YKOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\": \"Paulo da Silva edited\",\n\"picture\": \"paulo.s3.amazon.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:{{jungle_port}}/api/admin/authors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{jungle_port}}",
+					"path": [
+						"api",
+						"admin",
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/admin/authors/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ4aWNvQHhpY28uY29tIiwibmFtZSI6InhpY28iLCJpYXQiOjE2MDc3NDAzODd9.7L0XoXODBqSx4Rk3z-6KJj1Y0YXOZjy3C-hgSM2YKOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{jungle_port}}/api/admin/authors/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{jungle_port}}",
+					"path": [
+						"api",
+						"admin",
+						"authors",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/admin/authors/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ4aWNvQHhpY28uY29tIiwibmFtZSI6InhpY28iLCJpYXQiOjE2MDc3NDAzODd9.7L0XoXODBqSx4Rk3z-6KJj1Y0YXOZjy3C-hgSM2YKOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\": \"Paulo da Silva edited\",\n\"picture\": \"paulo.s3.amazon.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:{{jungle_port}}/api/admin/authors/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{jungle_port}}",
+					"path": [
+						"api",
+						"admin",
+						"authors",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/admin/authors/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ4aWNvQHhpY28uY29tIiwibmFtZSI6InhpY28iLCJpYXQiOjE2MDc3NDAzODd9.7L0XoXODBqSx4Rk3z-6KJj1Y0YXOZjy3C-hgSM2YKOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{jungle_port}}/api/admin/authors/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{jungle_port}}",
+					"path": [
+						"api",
+						"admin",
+						"authors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3001/api/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"valtim@gmail.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:{{jungle_port}}/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{jungle_port}}",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "1cb495f6-eaca-442b-8ad4-a99154d0a045",
+			"key": "jungle_port",
+			"value": "5000"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

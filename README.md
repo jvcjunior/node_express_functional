@@ -1,4 +1,22 @@
-Node.js Express API in Typescript For Jungle Devs
+# Jungle Devs - Node Challenge #001
+
+## Description
+
+**Challenge goal**: The purpose of this challenge is to give an overall understanding of a backend application. You’ll be implementing a simplified version of news provider API. The concepts that you’re going to apply are:
+
+- REST architecture :heavy_check_mark: 
+- Authentication and permissions;
+- Data modeling and migrations;
+- SQL database;
+- Query optimization;
+- Serialization;
+- Production builds.
+
+**Target level**: This is an all around challenge that cover both juniors and experience devs based on the depth of how the concepts were applied.
+
+**Final accomplishment**: By the end of this challenge you’ll have a production ready API.
+
+ # THE PROJECT
 
 ## Requirements
 
