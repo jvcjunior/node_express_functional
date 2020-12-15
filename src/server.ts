@@ -1,5 +1,5 @@
 import app from "./app";
 
-app.listen(3001, () => {
-  console.log('Server started on port 3001')
+app.listen(process.env.APP_PORT || 5000, () => {
+  console.log(`Server started on port ${process.env.APP_PORT || 5000}`)
 });

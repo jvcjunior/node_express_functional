@@ -1,4 +1,6 @@
-import express from 'express'
+
+require('module-alias/register')
+import express, { Express } from 'express'
 //@ts-ignore
 import cors from 'cors';
 //@ts-ignore
@@ -12,9 +14,10 @@ import './common/utils/errorHandlerGlobal.utils'
 // Database connection
 import './database/connection';
 
+
 // Create a new express application instance
 const { name, version } = config;
-const app = express();
+const app: Express = express();
 
 app.locals.name = name;
 app.locals.version = version;

@@ -1,7 +1,7 @@
 //@ts-ignore
 import asyncPipe from 'pipeawait';
 import { Request } from 'express';
-import { curry, getOr,  } from 'lodash/fp'
+import { curry } from 'lodash/fp'
 import { successResponse } from '../common/utils/response.utils';
 import { encrypt } from '../common/utils/auth.utils'
 import { create } from '../repositories/user.repository'

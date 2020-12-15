@@ -3,7 +3,7 @@ import { checkJwt } from '../common/middleware/auth.middleware'
 import { checkPermissions } from '../common/middleware/permissions.middleware'
 import authorController from '../controllers/author.controller'
 
-const routes = Router()
+const routes: Router = Router()
 
 routes.get('/', checkJwt, checkPermissions('get_authors'), authorController.getAll)
 routes.get('/:id', checkJwt, checkPermissions('get_author'), authorController.getById)

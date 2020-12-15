@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import authService from '../services/auth.service'
 
 const authorize = async (req: Request, res: Response, next: NextFunction) => {

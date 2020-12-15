@@ -1,8 +1,8 @@
 interface IRole {
-  id?: String;
+  id: number;
   name: String;
   description: String;
-  permissions?: String;
-  created_at?: Date;
-  updated_at?: Date;
+  permissions: IPermission[];
+  created_at: Date;
+  updated_at: Date;
 }

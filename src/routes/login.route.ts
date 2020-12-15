@@ -5,7 +5,7 @@ import {
   loginSchema
 } from '../common/utils/validation.utils';
 
-const routes = Router()
+const routes: Router = Router()
 
 routes.post('/', checkData(loginSchema), loginController.authorize)
 

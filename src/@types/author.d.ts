@@ -1,5 +1,5 @@
 interface IAuthor {
-  id: integer;
+  id: number;
   name: string;
   picture: string;
   created_at: Date;

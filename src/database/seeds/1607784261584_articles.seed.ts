@@ -1,5 +1,4 @@
 import Knex from "knex"
-const crypto = require('crypto')
 const table = 'articles'
 
 exports.seed = async function(knex: Knex) {

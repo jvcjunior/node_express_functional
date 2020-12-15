@@ -1,7 +1,8 @@
+import process from 'process';
 import { errorHandler } from './errorHandler.utils';
 
 // get the unhandled rejection and throw it to another fallback handler we already have.
-process.on('unhandledRejection', (reason: Error, promise: Promise<any>) => {
+process.on('unhandledRejection', (reason: Error) => {
   console.log('unhandledRejection ERROR')
   throw reason;
 });
@@ -12,3 +13,12 @@ process.on('uncaughtException', (error: Error) => {
     process.exit(1);
   }
 });
+
+process.on('SIGINT', function onSigint() {
+  process.exit();
+});
+
+process.on('SIGTERM', function onSigterm() {
+  process.exit();
+});
+

@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import signupService from '../services/signup.service'
 
 const signup = async (req: Request, res: Response, next: NextFunction) => {

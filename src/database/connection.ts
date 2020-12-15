@@ -1,8 +1,12 @@
 import knex from 'knex';
 import { Model }  from 'objection';
-import config from '../config/config';
+import knexfile from '../../knexfile'
 
-const dbConfig: knex.Config = config.db;
+const environment = process.env.NODE_ENV || 'development'
+
+//@ts-ignore
+const dbConfig: knex.Config = knexfile[environment];
+
 const db = knex(dbConfig)
 
 // Give the knex instance to objection.

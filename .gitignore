@@ -87,3 +87,4 @@ typings/
 database.sqlite
 src/database/database.sqlite
 sendgrid.env
+dist

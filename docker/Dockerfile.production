@@ -1,0 +1,18 @@
+# Our first stage, that is the Builder
+FROM node:12-alpine AS ts-builder
+WORKDIR /usr/src/app
+COPY . .
+RUN yarn install
+RUN yarn clean
+RUN yarn build
+# Our Second stage, that creates an image for production
+FROM node:12-alpine AS ts-prod
+
+EXPOSE 5000
+
+WORKDIR /usr/src/app
+COPY --from=ts-builder /usr/src/app/dist /usr/src/app/dist
+COPY --from=ts-builder "/usr/src/app/node_modules/" "/usr/src/app/node_modules/"
+COPY --from=ts-builder "/usr/src/app/package.json" "/usr/src/app/package.json"
+
+CMD yarn start:prod

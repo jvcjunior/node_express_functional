@@ -11,8 +11,8 @@ const options = {
 };
 
 export const checkData = (schema: Joi.Schema) => {
+  //@ts-ignore
   return (req: Request, res: Response, next: NextFunction) => {
-    console.log('Checking permissions middleware...')
      // validate request body against schema
      const { error, value } = schema.validate(req.body, options);
     

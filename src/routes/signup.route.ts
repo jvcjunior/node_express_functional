@@ -5,7 +5,7 @@ import {
   signupSchema
 } from '../common/utils/validation.utils';
 
-const routes = Router()
+const routes: Router = Router()
 
 routes.post('/', checkData(signupSchema), signupController.signup)
 

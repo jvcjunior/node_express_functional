@@ -1,5 +1,7 @@
 import Model from '../utils/model';
 class User extends Model {
+  role?: IRole;
+  
   static get tableName() {
     return 'users';
   }

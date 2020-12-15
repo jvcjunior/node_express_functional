@@ -1,7 +1,7 @@
 import HttpStatus from 'http-status-codes';
 import { NextFunction, Request, Response } from 'express';
 import { createJwtToken } from '../utils/auth.utils';
-import BaseError from '../utils/baseError.utils';
+import BaseError from '../../exceptions/BaseError';
 import { handler } from './error.middleware';
 const httpMocks = require('node-mocks-http');
 

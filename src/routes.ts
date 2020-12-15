@@ -6,7 +6,7 @@ import article from './routes/article.route'
 import articleAdmin from './routes/articleAdmin.route'
 import authorAdmin from './routes/authorAdmin.route'
 
-const routes = Router()
+const routes: Router = Router()
 
 routes.use('/api/login', login)
 routes.use('/api/signup', signUp)

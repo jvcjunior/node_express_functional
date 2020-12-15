@@ -1,8 +1,7 @@
 import BaseError from '../../exceptions/BaseError';
-import HttpStatus from 'http-status-codes';
 import permissionService from '../../services/permission.service';
 import { Request, Response, NextFunction } from 'express';
-import { baseErrorThrownResponse, errorResponse, errorThrownResponse } from '../utils/response.utils';
+import { baseErrorThrownResponse, errorThrownResponse } from '../utils/response.utils';
 
 export const checkPermissions = (permissionCode: string) => {
   return async (req: Request, res: Response, next: NextFunction) => {

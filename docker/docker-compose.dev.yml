@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  db:
+    image: "postgres:10-alpine"
+    container_name: "postgres-dev"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: starter-dev
+      POSTGRES_USER: starter-dev
+      POSTGRES_PASSWORD: secret-dev
+
+  api:
+    container_name: "api-dev"
+    restart: always
+    build: Dockerfile.development
+    env_file:
+      - .env.docker.development
+    ports: 
+      - "5000:5000" 
+    depends_on:
+      - db
