@@ -14,7 +14,8 @@
 
 Added:
 - Rate Limit
-- 
+- Request Data validation with Joi
+- Unit Tests with Jest
 
 **Target level**: This is an all around challenge that cover both juniors and experience devs based on the depth of how the concepts were applied.
 
