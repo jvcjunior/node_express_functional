@@ -45,7 +45,7 @@
     "lodash": "^4.17.20",
     "module-alias": "^2.2.2",
     "morgan": "^1.10.0",
-    "objection": "^2.2.3",
+    "objection": "^2.2.4",
     "pg": "^8.5.1",
     "pipeawait": "^1.0.0",
     "sqlite3": "^5.0.0",
