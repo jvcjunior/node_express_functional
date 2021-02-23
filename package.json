@@ -42,7 +42,7 @@
     "joi": "^17.3.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.12",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "module-alias": "^2.2.2",
     "morgan": "^1.10.0",
     "objection": "^2.2.3",
