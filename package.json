@@ -48,7 +48,7 @@
     "objection": "^2.2.3",
     "pg": "^8.5.1",
     "pipeawait": "^1.0.0",
-    "sqlite3": "^5.0.0",
+    "sqlite3": "^5.1.5",
     "ts-jest": "^26.4.4",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^4.1.2",
