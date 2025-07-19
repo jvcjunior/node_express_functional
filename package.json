@@ -44,7 +44,7 @@
     "knex": "^0.21.12",
     "lodash": "^4.17.20",
     "module-alias": "^2.2.2",
-    "morgan": "^1.10.0",
+    "morgan": "^1.10.1",
     "objection": "^2.2.3",
     "pg": "^8.5.1",
     "pipeawait": "^1.0.0",
